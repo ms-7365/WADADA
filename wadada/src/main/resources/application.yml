@@ -9,14 +9,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
     format_sql: true
     use_sql_comments: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.spatial.dialect.mysql.MySQL8SpatialDialect
   application:
     name: wadada
 
