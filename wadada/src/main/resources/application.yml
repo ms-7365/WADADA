@@ -28,16 +28,33 @@ spring:
     redis:
       host: ${REDIS_HOST}
       port: ${REDIS_PORT}
-#      port: ${ REDIS_PORT }
+      password: ${REDIS_PASSWORD}
+  #      port: ${ REDIS_PORT }
+  jwt:
+    header: Authorization
+    secret: ${JWT_KEY}
+    access-token-validity-in-seconds: ${JWT_ACCESS_VALIDITY_SECONDS}
+    refresh-token-validity-in-seconds: ${JWT_REFRESH_VALIDITY_SECONDS}
 
-jwt:
-  header: Authorization
-  secret: ${JWT_KEY}
-  access-token-validity-in-seconds: ${JWT_ACCESS_VALIDITY_SECONDS}
-  refresh-token-validity-in-seconds: ${JWT_REFRESH_VALIDITY_SECONDS}
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: e1f258c84a001ab789ff5de179f253a1
 
 aes:
   secret-key: ${AES_KEY}
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAUK2ZEHMYOWLQWCFJ
+      secret-key: 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
+    region:
+      static: ap-northeast-2
+    s3:
+      bucket: andyimagebucket
 
 #cloud:
 #  aws:
@@ -54,4 +71,3 @@ aes:
 
 server:
   port: 8080
-
