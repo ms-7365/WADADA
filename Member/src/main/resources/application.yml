@@ -42,7 +42,7 @@
         client:
           registration:
             kakao:
-              client-id: e4ce06b63668c81ed9ef421544bdab88
+              client-id: ${CLIENT_ID}
 
   aes:
     secret-key: ${AES_KEY}
@@ -50,12 +50,12 @@
   cloud:
     aws:
       credentials:
-        access-key: AKIAUK2ZEHMYOWLQWCFJ
-        secret-key: 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
+        access-key: ${CLOUD_AWS_CREDENTIALS_ACCESS_KEY}
+        secret-key: ${CLOUD_AWS_CREDENTIALS_SECRET_KEY}
       region:
-        static: ap-northeast-2
+        static: ${CLOUD_AWS_CREDENTIALS_REGION_STATIC}
       s3:
-        bucket: andyimagebucket
+        bucket: ${CLOUD_AWS_CREDENTIALS_S3_BUCKET}
   #cloud:
   #  aws:
   #    s3:
