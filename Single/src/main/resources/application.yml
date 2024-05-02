@@ -71,3 +71,5 @@ cloud:
 
 server:
   port: 8080
+  ssl:
+    key-store:classpath:keystore/
