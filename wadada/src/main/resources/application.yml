@@ -18,6 +18,10 @@ spring:
     database-platform: org.hibernate.spatial.dialect.mysql.MySQL8SpatialDialect
   application:
     name: wadada
+  elasticsearch:
+    username: ${ELS_USERNAME}
+    password: ${ELS_PASSWORD}
+    uris: ${ELS_URIS}
 
   datasource:
     url: ${MYSQL_URL}
@@ -71,3 +75,9 @@ cloud:
 
 server:
   port: 8080
+#  ssl:
+#    enabled: true
+#    key-store: http.p12
+#    key-store-password: -FDQ0vqATd6sm5lWRUMHIQ
+#    key-store-type: PKCS12
+#    key-alias: bns-ssl
