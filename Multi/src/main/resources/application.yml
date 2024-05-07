@@ -18,7 +18,10 @@ spring:
     database-platform: org.hibernate.spatial.dialect.mysql.MySQL8SpatialDialect
   application:
     name: wadada
-
+  elasticsearch:
+    username: ${ELS_USERNAME}
+    password: ${ELS_PASSWORD}
+    uris: ${ELS_URIS}
   datasource:
     url: ${MYSQL_URL}
     username: ${MYSQL_USERNAME}
