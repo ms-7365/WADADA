@@ -43,6 +43,13 @@ spring:
           kakao:
             client-id: e1f258c84a001ab789ff5de179f253a1
 
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
 aes:
   secret-key: ${AES_KEY}
 
@@ -71,3 +78,23 @@ cloud:
 
 server:
   port: 8080
+
+
+
+
+
+
+
+
+# RabbitMQ queue, exchange, routing-key ??
+rabbitmq:
+  queue.name: test01queue
+  exchange.name: test01
+  routing.key: ${RABBITMQ_ROUTING_KEY}
+
+  marathon1.name: marathon1
+  marathon2.name: marathon2
+  marathon3.name: marathon3
+#  marathon.queue.name : marathon
+#  marathon.exchange.name : marathon
+#  marathon.routing.key : marathon
