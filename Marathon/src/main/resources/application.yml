@@ -92,6 +92,7 @@ rabbitmq:
   exchange.name: test01
   routing.key: ${RABBITMQ_ROUTING_KEY}
 
+  marathon.name: marathon
   marathon1.name: marathon1
   marathon2.name: marathon2
   marathon3.name: marathon3
