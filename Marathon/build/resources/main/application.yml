@@ -87,11 +87,16 @@ server:
 
 
 # RabbitMQ queue, exchange, routing-key ??
+#rabbitmq:
+#  queue.name: test01queue
+#  exchange.name: test01
+#  routing.eky: ${RABBITMQ_ROUTING
 rabbitmq:
-  queue.name: test01queue
+  queue.name: marathon
   exchange.name: test01
   routing.key: ${RABBITMQ_ROUTING_KEY}
 
+  marathon.name: marathon
   marathon1.name: marathon1
   marathon2.name: marathon2
   marathon3.name: marathon3
