@@ -92,7 +92,7 @@ server:
 #  exchange.name: test01
 #  routing.eky: ${RABBITMQ_ROUTING
 rabbitmq:
-  queue.name: marathon
+  queue.name: marathon1
   exchange.name: test01
   routing.key: ${RABBITMQ_ROUTING_KEY}
 
