@@ -71,3 +71,6 @@
     port: 8080
     servlet:
       context-path: /Wadada
+    tomcat:
+      max-swallow-size: 50MB
+      max-http-post-size: 50MB
