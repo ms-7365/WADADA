@@ -44,7 +44,7 @@ spring:
       client:
         registration:
           kakao:
-            client-id: e1f258c84a001ab789ff5de179f253a1
+            client-id: 
 
 aes:
   secret-key: ${AES_KEY}
@@ -52,12 +52,12 @@ aes:
 cloud:
   aws:
     credentials:
-      access-key: AKIAUK2ZEHMYOWLQWCFJ
-      secret-key: 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
+      access-key: 
+      secret-key: 
     region:
-      static: ap-northeast-2
+      static:
     s3:
-      bucket: andyimagebucket
+      bucket: 
 
 #cloud:
 #  aws:
