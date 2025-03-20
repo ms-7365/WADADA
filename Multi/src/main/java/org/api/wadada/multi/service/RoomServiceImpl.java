@@ -254,16 +254,13 @@ public class RoomServiceImpl implements RoomService {
         List<RoomDocument> roomDocuments = customRoomRepository.findByRoomTags(tagList);
         // 현재 활성화된 룸 정보 가져오고
         HashMap<Integer, Integer> roomInfo = new HashMap<>();
-        Map<Integer,RoomDto> activeRooms = roomManager.getAllRooms();
-        for (Map.Entry<Integer, RoomDto> room : activeRooms.entrySet()) {
-            roomInfo.put(room.getValue().getRoomSeq(), room.getValue().getRoomIdx());
-        }
-
-
+        Set<Integer> activeRoomSeqs = activeRooms.values().stream()
+            .map(RoomDto::getRoomSeq)
+            .collect(Collectors.toSet());
+        
         roomDocuments = roomDocuments.stream()
-                .filter(roomDocument -> activeRooms.values().stream()
-                        .anyMatch(r -> r.getRoomSeq() == roomDocument.getRoomSeq()))
-                .toList();
+            .filter(roomDocument -> activeRoomSeqs.contains(roomDocument.getRoomSeq()))
+            .toList();
         // index와 정보를 response로
         List<RoomRes> roomResList = roomDocuments.stream().map(
                 roomDocument -> {
